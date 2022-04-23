@@ -15,16 +15,77 @@
 <!-- {{frcst}} -->
 
 <div class="body">
+    <link rel="stylesheet" href="../static/styles/weather.css">
     <div class="wthr_box">
+        <img src="../static/images/home_logo.jpg" class="icons" id="home_logo" alt="">
+        <h1 class="city">{{city}}</h1>
+        <img src="../static/images/weather.jpg" id="weather_clip" alt="">
         <div class="present">
-
+            <ul class="other_info">
+                <li class="imps"><img src="../static/images/cloud.jpg" class="icons" alt=""></li>
+                <li class="imps"><h2>{{temp_present}}<sup>0</sup>C</h2></li>
+                <li class="imps">{{wthr_main}}</li>
+                <li class="extras"><h3>Wind Speed</h3> {{wind_speed}} m/s</li>
+                <li class="extras"><h3>Cloudiness</h3> {{cloudiness}}%</li>
+                <li class="extras"><h3>Humidity</h3> {{humidity}}%</li>
+            </ul>
+            <div class="min_max">
+                <h2>MAX: {{temp_max}}<sup>0</sup>C</h2>
+                <h2>MIN: {{temp_min}}<sup>0</sup>C</h2>
+            </div>
         </div>
         <div class="forcast">
-            <div class="day"><div class="frcst_cont"></div>
-            <div class="frcst_cont"></div>
-            <div class="frcst_cont"></div>
-            <div class="frcst_cont"></div>
-            <div class="frcst_cont"></div></div>
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
+            
+        </div>
+        <div class="forcast">
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
+            
+        </div>
+        <div class="forcast">
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
+            
+        </div>
+        <div class="forcast">
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
+            
+        </div>
+        <div class="forcast">
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
+            
+        </div>
+        <div class="forcast">
+            <div class="day">
+            <div class="frcst_cont">Monday</div>
+            <div class="frcst_cont">25th April</div>
+            <div class="frcst_cont">clear</div>
+            <div class="frcst_cont">33</div>
+            <div class="frcst_cont">26</div></div>
             
         </div>
     </div>

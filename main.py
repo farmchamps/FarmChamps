@@ -8,20 +8,18 @@ from flask_sqlalchemy import SQLAlchemy
 # setup the app
 app = Flask(__name__)
 app.secret_key = "A_simple_phrase"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/login'
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:58672@localhost/login'
+# db = SQLAlchemy(app)
 
 
 
-class Login(db.Model):
+# class Login(db.Model):
 
-    # sno,name, email_id, phone_number, password
+#     # sno,name, email_id, phone_number, password
     
-    sno = db.Column(db.Integer(100), primary_key=True)
-    name = db.Column(db.String(100), unique=False, nullable=False)
-    # email_id = db.Column(db.String(50), nullable=False)
-    # phone_number = db.Column(db.String(20), nullable=False)
-    password = db.Column(db.String(20), nullable=False)
+#     sno = db.Column(db.Integer(), primary_key=True)
+#     name = db.Column(db.String(100), unique=False, nullable=False)
+#     password = db.Column(db.String(20), nullable=False)
 
 
 # plugins
