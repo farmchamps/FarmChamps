@@ -2,8 +2,9 @@
 
 {% block body %}
 
-
-<!-- your code -->
-hello world!!
-
+{% for i in nos %}
+<div class="news_sec">
+    news no. {{i}}: {{newses[i]['title'][0:-14]}} <br> {{newses[i]['content']}} <br>
+</div>
+{% endfor %}
 {% endblock %}
