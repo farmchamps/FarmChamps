@@ -52,7 +52,7 @@ def weather():
     with open("forcast_sample.json","rt") as f:
         frcst_json_str = f.read()
     frcst = json.loads(frcst_json_str)
-    return render_template('weather.html',cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity, wthr_main = wthr_main, wind_speed = wind_speed, frcst = frcst)
+    return render_template('weather.html', nos = range(7) ,cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity, wthr_main = wthr_main, wind_speed = wind_speed, frcst = frcst)
 
 
 # running the app
