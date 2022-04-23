@@ -15,7 +15,7 @@ nav{
 }
 .header nav ul{
     list-style: none;
-    display: inherit;
+    display: inherit; 
     position: absolute;
     right: 41px;
     align-items: center;

@@ -1,3 +1,144 @@
 *{
+    font-family: ubuntu;
+}
+
+.goog-te-gadget-simple{
+    background: #36D16B !important;
+    padding: 9px !important;
+    border-radius: 19px !important;
+    display: inline-block;
+    right: 42px;
+    position: absolute;
+    top: 110px;
+    border: 0px !important;
+}
+
+#logo{
+    height: 50px;
+}
+
+header{
+    height: 100px;
+    background: #36D16B;
+}
+
+#logo{
+    padding: 22px;
+}
+footer{
+    position: absolute;
+    bottom: -400px;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: block;
+}
+footer .rights{
+    padding: 15px;
+}
+footer h4{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+.design img{
+    width: 400px;
+position: relative;
+margin: auto;
+left: 200px;
+top: 105px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    background: #73ce8e;
+    /* height: 150vh; */
+}
+nav{
+    width: 100%;
+    /* height: 12vh; */
+    background:#80F0A6;
+    display: block ruby;
+}
+.header nav ul{
+    list-style: none;
+    display: inherit;
+    /* position: absolute; */
+    right: 41px;
+    align-items: center;
+    display: flex;
+    top: 15px;
+    padding: 8px 0px;
+    background: #80F0A6;
+    width: 900px;
+}
+nav ul li{
+    margin-left: 50px;
+    padding: 0px 0px;
+}
+nav ul a{
+    color: rgb(23, 2, 71);
+    text-decoration: none;
+    font-size: larger;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: ubuntu;
+}
+.header{
+    width: 100%;
+    /* height: 10vh; */
+    /* background: rgb(19, 240, 104); */
+    display: block ruby;
+}
+.header .user{
+    margin-left: 50px;
+    position: absolute;
+    right: 41px;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    top: 20px;
+}
+nav{
+    width: 100%;
+    /* height: 8vh; */
+    /* background: rgb(88, 241, 165); */
+    display: block ruby;
+}
+.nav nav ul{
+    list-style: none;
+    display: inherit;
+    position: relative;
+    right: 41px;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    top: 10px;
+    float: right;
+}
+nav ul li{
+    margin-left: 50px;
+    padding: 10px 10px;
+}
+nav ul a{
+    color: rgb(23, 2, 71);
+    text-decoration: none;
+    font-size: larger;
+}
+#user{
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+#user img{
+    width: 40px;
     
 }

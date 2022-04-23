@@ -4,7 +4,7 @@
 
 {% for i in nos %}
 <div class="news_sec">
-    news no. {{i}}: {{newses[i]['title'][0:-14]}} <br> {{newses[i]['content']}} <br>
+    news no. {{i+1}}: {{newses[i]['title'][0:-14]}} <br> {{newses[i]['content']}} <br>
 </div>
 {% endfor %}
 {% endblock %}
