@@ -1,31 +1,28 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LogIn</title>
     <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/login.css">
 </head>
 <body> 
     <header>
-        <!-- header code -->
         <div class="header">
-            <div class="logo"></div>
-            <div class="user">LOGIN</div>
-        </div>
-        <div class="nav">
             <nav>
                 <div class="logo"><a href="/"><img src="../static/images/logo.jpg" id="logo" alt=""></a></div>
                 <ul>
-                    <li>HOME</li>
-                    <li>WEATHER</li>
-                    <li>FINANCIAL</li>
-                    <li>BLOG</li>
-                    <li>HELPING HAND</li>
-                    <li>ABOUT US</li>
+                    <li><a href="/"> HOME</a></li>
+                    <li><a href="/weather"> WEATHER</a></li>
+                    <li><a href="/financial"> FINANCIAL</a></li>
+                    <li><a href="/blog"> BLOG</a></li>
+                    <li><a href="/support"> helping hand</a></li>
+                    <li><a href="/about"> About us</a></li>
                 </ul>
             </nav>
-          </div>
+        </div>
     </header>
     <main>
         <div id="google_translate_element"></div>
@@ -39,8 +36,20 @@ function googleTranslateElementInit() {
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         {% block body %} {% endblock %}
     </main>
+    <div class="contact-details">
+        <div class="info">
+            <h4>connect with us</h4>
+            <a href="#" target="_blank"><img src="../static/images/facebook.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/instagram.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/linkedin.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/github.png"></a>
+        </div>
+    </div>
     <footer>
-        <!-- footer code-->
+        <div class="rights">
+            <h4>&copy; Copyright 2022. All rights reserved</h4>
+            <h4>FARMCHAMPS.com</h4>
+        </div>
     </footer>
 </body>
 </html>
