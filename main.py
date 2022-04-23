@@ -1,13 +1,27 @@
 import json
 from flask import Flask, render_template
 import requests
-
+from flask_sqlalchemy import SQLAlchemy
 
 
 
 # setup the app
 app = Flask(__name__)
 app.secret_key = "A_simple_phrase"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/login'
+db = SQLAlchemy(app)
+
+
+
+class Login(db.Model):
+
+    # sno,name, email_id, phone_number, password
+    
+    sno = db.Column(db.Integer(100), primary_key=True)
+    name = db.Column(db.String(100), unique=False, nullable=False)
+    # email_id = db.Column(db.String(50), nullable=False)
+    # phone_number = db.Column(db.String(20), nullable=False)
+    password = db.Column(db.String(20), nullable=False)
 
 
 # plugins
@@ -18,8 +32,15 @@ def home():
     news = json.loads(news_json_str)['articles']
     return render_template("index.html", newses = news, nos = range(10))
 
-@app.route("/login")
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if(request.method=='POST'):
+        name = request.form.get('name')
+        password = request.form.get('password')
+        entry = Login(name=name, password=password)
+        db.session.add(entry)
+        db.session.commit()
     return render_template("login.html")
 
 @app.route("/weather")
@@ -40,9 +61,19 @@ def weather():
     temp_min = wthr['main']['temp_min']
     temp_max = wthr['main']['temp_max']
     humidity = wthr['main']['humidity']
+    wthr_main = wthr['weather'][0]['main']
+    wind_speed = wthr['wind']['speed']
     print(wthr_json_str)
 
-    return render_template('weather.html',cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity)
+    # forcast
+    cnt = 7
+    # frcst_json = requests.get(f'api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API_key}')
+    # frcst_json_str = frcst_json.text
+
+    with open("forcast_sample.json","rt") as f:
+        frcst_json_str = f.read()
+    frcst = json.loads(frcst_json_str)
+    return render_template('weather.html', nos = range(7) ,cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity, wthr_main = wthr_main, wind_speed = wind_speed, frcst = frcst)
 
 
 # running the app
