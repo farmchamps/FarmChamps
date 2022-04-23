@@ -1,13 +1,27 @@
 import json
 from flask import Flask, render_template
 import requests
-
+from flask_sqlalchemy import SQLAlchemy
 
 
 
 # setup the app
 app = Flask(__name__)
 app.secret_key = "A_simple_phrase"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/login'
+db = SQLAlchemy(app)
+
+
+
+class Login(db.Model):
+
+    # sno,name, email_id, phone_number, password
+    
+    sno = db.Column(db.Integer(100), primary_key=True)
+    name = db.Column(db.String(100), unique=False, nullable=False)
+    # email_id = db.Column(db.String(50), nullable=False)
+    # phone_number = db.Column(db.String(20), nullable=False)
+    password = db.Column(db.String(20), nullable=False)
 
 
 # plugins
@@ -18,8 +32,15 @@ def home():
     news = json.loads(news_json_str)['articles']
     return render_template("index.html", newses = news, nos = range(10))
 
-@app.route("/login")
+
+@app.route("/login", methods=['GET', 'POST'])
 def login():
+    if(request.method=='POST'):
+        name = request.form.get('name')
+        password = request.form.get('password')
+        entry = Login(name=name, password=password)
+        db.session.add(entry)
+        db.session.commit()
     return render_template("login.html")
 
 @app.route("/weather")
