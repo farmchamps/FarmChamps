@@ -6,25 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogIn</title>
     <link rel="stylesheet" href="../static/styles/login.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
 </head>
 <body>
-    <div class="header">
-        <nav>
-            <div class="logo"><a href="/"><img src="../static/images/logo.jpg" id="logo" alt=""></a></div>
-            <ul>
-                <!-- <li><a href="/about">About Us</a></li>
-                <li>{% if user == 'login' %}
-                    <div class="logo"><a href="/dashboard"><button id="btn">LOGIN</button></a></div>
-                {% else %}
-                    <a href="/dashboard"><button id="user" title={{user}}><img src="../static/images/PngItem_5040528.png" alt="user"></button></a></li>
-                {% endif %}</li> -->
-                <li>HOME</li>
-                <li>WEATHER</li>
-                <li>FINANCIAL</li>
-                <li>BLOG</li>
-            </ul>
-        </nav>
-      </div>
+    <header>
+        <div class="header">
+            <nav>
+                <div class="logo"><a href="/"><img src="../static/images/logo.jpg" id="logo" alt=""></a></div>
+                <ul>
+                    <li>HOME</li>
+                    <li>WEATHER</li>
+                    <li>FINANCIAL</li>
+                    <li>BLOG</li>
+                </ul>
+            </nav>
+          </div>
+    </header>
       <!-- <div class="main"> -->
     <div class="login-form main">
         <form action="/login" method="post" class="form">
@@ -54,7 +51,6 @@
         <div class="rights">
             <h4>&copy; Copyright 2022. All rights reserved</h4>
             <h4>FARMCHAMPS.com</h4>
-            <!-- <h4>Trinetra.com</h4> -->
         </div>
     </footer>
 </body>
