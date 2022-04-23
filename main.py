@@ -40,9 +40,19 @@ def weather():
     temp_min = wthr['main']['temp_min']
     temp_max = wthr['main']['temp_max']
     humidity = wthr['main']['humidity']
+    wthr_main = wthr['weather'][0]['main']
+    wind_speed = wthr['wind']['speed']
     print(wthr_json_str)
 
-    return render_template('weather.html',cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity)
+    # forcast
+    cnt = 7
+    # frcst_json = requests.get(f'api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API_key}')
+    # frcst_json_str = frcst_json.text
+
+    with open("forcast_sample.json","rt") as f:
+        frcst_json_str = f.read()
+    frcst = json.loads(frcst_json_str)
+    return render_template('weather.html',cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity, wthr_main = wthr_main, wind_speed = wind_speed, frcst = frcst)
 
 
 # running the app

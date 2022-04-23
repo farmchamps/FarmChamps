@@ -14,3 +14,11 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+1. You can run the site by running "python main.py" in terminal opened at the home folder
+
+2. if you get 'module not found' error try running "pip install flask requests" in terminal.
+
+3. next type "localhost:5000" in your browser.
+
+4. above functions work only if you have python installed in your device.
