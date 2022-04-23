@@ -13,7 +13,10 @@ app.secret_key = "A_simple_phrase"
 # plugins
 @app.route("/")
 def home():
-    return render_template("index.html")
+    news_json = requests.get(f"https://newsapi.org/v2/everything?q=crops&from=2022-03-23&to=2022-04-22&sortBy=date&apiKey=3d3aca73f7d54306beb399b4d73e11a0")
+    news_json_str = news_json.text
+    news = json.loads(news_json_str)['articles']
+    return render_template("index.html", newses = news, nos = range(10))
 
 @app.route("/login")
 def login():
