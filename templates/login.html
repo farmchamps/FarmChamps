@@ -1,29 +1,57 @@
-
-{% extends "layout.html"%}
-{% block body %}
-<link rel="stylesheet" href="../static/styles/login.css">
-<div class="login-form main">
-    <form action="/login" method="post" class="form">
-        <h2>Log in</h2>
-        <p class="text">Username</p>
-        <input type="text" name="name" id="username" placeholder="Username">
-        <p class="text">Password</p>
-        <input type="password" name="pass" id="password" placeholder="Password">
-        <p class="login">Login with Google</p>
-        <p class="login">Login with Facebook</p>
-        <button type="submit">Submit</button>
-        <p class="signup-msg">Don't have an account?<a href="/signup">Signup</a></p>
-    </form>
-    <div class="design"><img src="../static/images/login-removebg-preview.png"  alt=""></div>
-</div>
-<!-- </div> -->
-<div class="contact-details">
-    <div class="info">
-        <h4>connect with us</h4>
-        <a href="#" target="_blank"><img src="../static/images/facebook.png"></a>
-        <a href="#" target="_blank"><img src="../static/images/instagram.png"></a>
-        <a href="#" target="_blank"><img src="../static/images/linkedin.png"></a>
-        <a href="#" target="_blank"><img src="../static/images/github.png"></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="../static/styles/login.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <nav>
+                <div class="logo"><a href="/"><img src="../static/images/logo.jpg" id="logo" alt=""></a></div>
+                <ul>
+                    <li>HOME</li>
+                    <li>WEATHER</li>
+                    <li>FINANCIAL</li>
+                    <li>BLOG</li>
+                </ul>
+            </nav>
+          </div>
+    </header>
+      <!-- <div class="main"> -->
+    <div class="login-form main">
+        <form action="/login" method="post" class="form">
+            <h2>Log in</h2>
+            <p class="text">Username</p>
+            <input type="text" name="name" id="username" placeholder="Username">
+            <p class="text">Password</p>
+            <input type="password" name="pass" id="password" placeholder="Password">
+            <p class="login">Login with Google</p>
+            <p class="login">Login with Facebook</p>
+            <button type="submit">Submit</button>
+            <p class="signup-msg">Don't have an account?<a href="/signup">Signup</a></p>
+        </form>
+        <div class="design"><img src="../static/images/login-removebg-preview.png"  alt=""></div>
     </div>
-</div>
-{% endblock %}
+    <!-- </div> -->
+    <div class="contact-details">
+        <div class="info">
+            <h4>connect with us</h4>
+            <a href="#" target="_blank"><img src="../static/images/facebook.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/instagram.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/linkedin.png"></a>
+            <a href="#" target="_blank"><img src="../static/images/github.png"></a>
+        </div>
+    </div>
+    <footer>
+        <div class="rights">
+            <h4>&copy; Copyright 2022. All rights reserved</h4>
+            <h4>FARMCHAMPS.com</h4>
+        </div>
+    </footer>
+</body>
+</html>
