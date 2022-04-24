@@ -7,8 +7,12 @@
   font-family: 'Exo 2', sans-serif;
 }
 
+img{
+  display: inline !important;
+}
+
 body{
-  background: url(https://cutewallpaper.org/21/sage-green-wallpaper-desktop/Green-Background-Hd-Wallpaper-67-Group-Wallpapers.jpg);
+  /* background: url(https://cutewallpaper.org/21/sage-green-wallpaper-desktop/Green-Background-Hd-Wallpaper-67-Group-Wallpapers.jpg); */
 }
 
 .wrapper{
@@ -98,4 +102,82 @@ body{
 
 .our_team .team_member .member_img:hover .social_media{
   transform: scale(1);
+}
+
+.about_pics{
+  width: 246px;
+border-radius: 50%;
+aspect-ratio: 1/1;
+object-fit: cover;
+border: solid 15px #529dee;
+position: relative;
+
+top: 37px;
+}
+
+.main h1{
+  font-size: 56px;
+text-align: center;
+padding-top: 65px;
+color: #262d8d;
+}
+
+.description{
+  width: 90%;
+  font-size: x-large;
+  margin: auto;
+    margin-top: auto;
+  margin-top: 75px;}
+
+.background{
+  width: 85%;
+background: rgba(255, 255, 255, 0.466);
+margin: auto;
+border-radius: 48px;
+height: 75%;
+}
+
+.a_site{
+  height: 761 !important;
+  aspect-ratio: 6/5 !important;
+}
+
+.participants{
+  width: 70%;
+  background: rgba(255, 255, 255, 0.466);
+  margin: 153px auto;
+  font-size: x-large;
+  border-radius: 27px;
+  padding: 30px;
+  position: relative;
+  top: -65px;
+}
+
+.members{
+  width: 141px;
+border: solid 14px #3982ce;
+position: relative;
+top: -84px;
+left: -273px;
+height: 141px !important;
+padding: 0px;
+}
+
+.about_mem{
+  position: relative;
+top: -79px;
+left: 90px;
+width: 90%;
+}
+
+.right .about_mem{
+  left: 20px;
+}
+
+.right .members{
+  left: 281px;
+}
+
+#logo{
+  padding: 0px;
 }
