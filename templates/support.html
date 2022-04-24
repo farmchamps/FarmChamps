@@ -2,9 +2,28 @@
 
 {% block body %}
 
+<link rel="stylesheet" href="../static/styles/support.css">
 <div class="finan">
-    <form action="/support" method="post">
-        <input type="text" placeholder="">
+    <img src="../static/images/farmer_clip.jpg" id="farm_clip" alt="">
+    <h1>Contact Us</h1>
+    <form action="/support" method="post" id="finan-form">
+        <input type="text" name="name" placeholder="Name">
+        <input type="number" name="age" placeholder="Age">
+        <div class="radio_enclose">
+        <input type="radio" name="gender" placeholder="male">
+        male
+        </div>
+        <div class="radio_enclose">
+        <input type="radio" name="gender" placeholder="female">
+        female
+        </div>
+
+        <input type="number" name="phonenumber" placeholder="Phone Number">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State">
+        <input type="text" name="country" placeholder="Country">
+        <input type="text" name="message" id="msg" placeholder="Message">
+        <button id="btn" >Submit</button>
     </form>
 </div>
 

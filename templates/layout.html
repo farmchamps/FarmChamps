@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../static/styles/main.css">
     <link rel="stylesheet" href="../static/styles/login.css">
     <link rel="stylesheet" href="../static/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 </head>
 <body> 
     <header>
@@ -36,6 +39,15 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category,message in messages%}
+    <div class="flash_msg" id="flash_msg" onclick="flash_click()">
+        {{message}}
+    </div>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
             {% block body %} {% endblock %}
     </main>
     <div class="contact-details">
@@ -47,6 +59,12 @@
             <a href="#" target="_blank"><img src="../static/images/github.png"></a>
         </div>
     </div>
+    <script>
+        function flash_click(){
+    flash = document.getElementById('flash_msg')
+    flash.style.display = 'none'
+}
+    </script>
     <footer>
         <div class="rights">
             <h4>&copy; Copyright 2022. All rights reserved</h4>
