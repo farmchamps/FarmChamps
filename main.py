@@ -1,6 +1,6 @@
 
 import json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
 import requests
 from flask_sqlalchemy import SQLAlchemy
 
@@ -21,6 +21,20 @@ app.secret_key = "A_simple_phrase"
 #     sno = db.Column(db.Integer(), primary_key=True)
 #     name = db.Column(db.String(100), unique=False, nullable=False)
 #     password = db.Column(db.String(20), nullable=False)
+
+# class Support(db.Model):
+
+#     # sno,name, age, phone_number, gender, city/village, state, country, message
+    
+#     sno = db.Column(db.Integer(), primary_key=True)
+#     name = db.Column(db.String(100), unique=False, nullable=False)
+#     age = db.Column(db.Integer(20), nullable=False)
+#     phonenumber = db.Column(db.String(100), nullable=False)
+#     city_village = db.Column(db.String(100), nullable=False)
+#     state = db.Column(db.String(100), nullable=False)
+#     country = db.Column(db.String(100), nullable=False)
+#     message = db.Column(db.String(100), nullable=False)
+
 
 
 # plugins
@@ -86,8 +100,21 @@ def weather():
 def financials():
     return render_template("financial.html")
 
-@app.route("/support")
+@app.route("/support",methods=['GET', 'POST'])
 def support():
+    if(request.method=='POST'):
+        # name = request.form.get('name')
+        # age = request.form.get('age')
+        # phonenumber = request.form.get('phonenumber')
+        # city_village = request.form.get('city_village')
+        # state = request.form.get('state')
+        # country = request.form.get('country')
+        # message = request.form.get('message')
+        # entry = Login(name=name, age=age, phonenumber=phonenumber, city_village = city_village,state= state,country=country,message=message )
+        # db.session.add(entry)
+        # db.session.commit()
+        flash("your form is submitted successfully")
+
     return render_template("support.html")
 
 

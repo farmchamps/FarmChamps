@@ -30,8 +30,8 @@ header{
     padding: 22px;
 }
 footer{
-    position: absolute;
-    bottom: -400px;
+    /* position: absolute;
+    bottom: -400px; */
     width: 100%;
     height: 100px;
     background-color: black;
@@ -146,3 +146,31 @@ nav ul a{
     width: 40px;
     
 }
+
+.finan{
+    width: 70%;
+    background: #80F0A6;
+    margin: 100px auto;
+    height: 1000px;
+    border-radius: 50px;
+}
+
+.flash_msg{
+    width: 45%;
+    margin: auto;
+    font-size: x-large;
+    text-align: center;
+    background: rgb(143 146 103 / 64%);
+    padding: 16px 0px;
+    border-radius: 20px;
+    border: 3.2px solid rgb(119, 111, 119);
+    position: fixed;
+    top: 88px;
+    left: 26%;
+    translate-x: -50%;
+    z-index: 20;
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    cursor: pointer;
+}
+
