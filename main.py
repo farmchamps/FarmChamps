@@ -1,5 +1,6 @@
+
 import json
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 from flask_sqlalchemy import SQLAlchemy
 
@@ -8,29 +9,35 @@ from flask_sqlalchemy import SQLAlchemy
 # setup the app
 app = Flask(__name__)
 app.secret_key = "A_simple_phrase"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/login'
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:58672@localhost/login'
+# db = SQLAlchemy(app)
 
 
 
-class Login(db.Model):
+# class Login(db.Model):
 
-    # sno,name, email_id, phone_number, password
+#     # sno,name, email_id, phone_number, password
     
-    sno = db.Column(db.Integer(100), primary_key=True)
-    name = db.Column(db.String(100), unique=False, nullable=False)
-    # email_id = db.Column(db.String(50), nullable=False)
-    # phone_number = db.Column(db.String(20), nullable=False)
-    password = db.Column(db.String(20), nullable=False)
+#     sno = db.Column(db.Integer(), primary_key=True)
+#     name = db.Column(db.String(100), unique=False, nullable=False)
+#     password = db.Column(db.String(20), nullable=False)
 
 
 # plugins
 @app.route("/")
 def home():
-    news_json = requests.get(f"https://newsapi.org/v2/everything?q=crops&from=2022-03-23&to=2022-04-22&sortBy=date&apiKey=3d3aca73f7d54306beb399b4d73e11a0")
+    news_json = requests.get(f"https://newsapi.org/v2/everything?q=crops&sortBy=date&apiKey=3d3aca73f7d54306beb399b4d73e11a0")
     news_json_str = news_json.text
     news = json.loads(news_json_str)['articles']
     return render_template("index.html", newses = news, nos = range(10))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/blog')
+def blogs():
+    return render_template('blogs.html', ros = range(6))
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -74,6 +81,14 @@ def weather():
         frcst_json_str = f.read()
     frcst = json.loads(frcst_json_str)
     return render_template('weather.html', nos = range(7) ,cloudiness = cloudiness,country = country, city = city, temp_present = temp_present, temp_max = temp_max, temp_min = temp_min, humidity = humidity, wthr_main = wthr_main, wind_speed = wind_speed, frcst = frcst)
+
+@app.route("/financial")
+def financials():
+    return render_template("financial.html")
+
+@app.route("/support")
+def support():
+    return render_template("support.html")
 
 
 # running the app
