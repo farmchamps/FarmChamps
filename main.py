@@ -1,6 +1,7 @@
 
 import json
 from flask import Flask, render_template, request
+import phonenumbers
 import requests
 from flask_sqlalchemy import SQLAlchemy
 
@@ -9,19 +10,32 @@ from flask_sqlalchemy import SQLAlchemy
 # setup the app
 app = Flask(__name__)
 app.secret_key = "A_simple_phrase"
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:58672@localhost/login'
-# db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:58672@localhost/login'
+db = SQLAlchemy(app)
 
 
 
-# class Login(db.Model):
+class Login(db.Model):
 
-#     # sno,name, email_id, phone_number, password
+    # sno,name, email_id, phone_number, password
     
-#     sno = db.Column(db.Integer(), primary_key=True)
-#     name = db.Column(db.String(100), unique=False, nullable=False)
-#     password = db.Column(db.String(20), nullable=False)
+    sno = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(100), unique=False, nullable=False)
+    password = db.Column(db.String(20), nullable=False)
 
+
+class Support(db.Model):
+
+    # sno,name, age, phone_number, gender, city/village, state, country, message
+    
+    sno = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(100), unique=False, nullable=False)
+    age = db.Column(db.Integer(20), nullable=False)
+    phonenumber = db.Column(db.String(100), nullable=False)
+    city_village = db.Column(db.String(100), nullable=False)
+    state = db.Column(db.String(100), nullable=False)
+    country = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.String(100), nullable=False)
 
 # plugins
 @app.route("/")
@@ -84,10 +98,23 @@ def weather():
 
 @app.route("/financial")
 def financials():
+
     return render_template("financial.html")
 
-@app.route("/support")
+@app.route("/support",methods=['GET', 'POST'])
 def support():
+    if(request.method=='POST'):
+        name = request.form.get('name')
+        age = request.form.get('age')
+        phonenumber = request.form.get('phonenumber')
+        city_village = request.form.get('city_village')
+        state = request.form.get('state')
+        country = request.form.get('country')
+        message = request.form.get('message')
+        entry = Login(name=name, age=age, phonenumber=phonenumber, city_village = city_village,state= state,country=country,message=message )
+        db.session.add(entry)
+        db.session.commit()
+
     return render_template("support.html")
 
 
