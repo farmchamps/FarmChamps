@@ -1,4 +1,27 @@
 {% extends "layout.html"%}
 {% block body %}
-
+<link rel="stylesheet" href="../static/styles/blogs.css">
+<img src="../static/images/blogs_clip.jpg" id="blogs_clip" alt="">
+<h2 id="greetings">Greatings Readers!</h2>
+<div class="blogs">
+    {% for i in ros%}
+    <div class="one_blog">
+    {% if i%2 == 0 %}
+    <img src="../static/images/blog{{i+1}}.jpg" alt="" class="thumbnail_left">
+    {%else%}
+    <img src="../static/images/blog1{{i+1}}.jpg" alt="" class="thumbnail_right">
+    {%endif%}
+    {% if i%2 == 0 %}
+    <div class="blog_summary sum_right">
+    {%else%}
+    <div class="blog_summary sum_left">
+    {%endif%}
+        <h2>heading</h2>
+            <div class="summ">
+                asfasf as f aesf a fer we rawer we rasd f zxfsghgfhj gh r fse fds g sdg d 
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
 {%endblock%}

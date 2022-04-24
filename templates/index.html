@@ -1,10 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
-
-{% for i in nos %}
-<div class="news_sec">
-    news no. {{i+1}}: {{newses[i]['title'][0:-14]}} <br> {{newses[i]['content']}} <br>
+<link rel="stylesheet" href="../static/styles/index.css">
+<div class="feed-box">
+    <h2>Top Stories</h2>
+    <div class="news-feed">
+        {% for i in nos %}
+        <div class="feed">
+            <div class="feed-content">
+                <h3>{{newses[i]['title']}}</h3><br>
+                <p>{{newses[i]['content'][0:-14]}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+<div class="farmer">
+    <img src="../static/images/f2.jpg" alt="">
+    <div class="farmer-text">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime perspiciatis eaque quas perferendis omnis laudantium at ipsum amet repellendus? Praesentium ipsa perferendis velit eos harum dolorum illo sapiente in, aspernatur blanditiis alias odio illum quod fugiat laudantium fuga quibusdam incidunt, voluptate tempore, maxime veniam? Ullam, assumenda minima. Odit, deleniti. Eaque animi odit ab! Exercitationem blanditiis obcaecati incidunt temporibus quaerat unde facere nisi mollitia, quod deleniti hic provident est cupiditate animi ducimus natus illum quis dolorem! Labore nemo iusto pariatur error corrupti quia maiores quae dolorem quisquam amet ipsam repudiandae, laudantium distinctio reiciendis ea non animi officiis inventore aut sapiente porro!</p>
+    </div>
 </div>
-{% endfor %}
+
 {% endblock %}
