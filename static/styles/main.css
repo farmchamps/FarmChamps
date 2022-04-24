@@ -146,3 +146,11 @@ nav ul a{
     width: 40px;
     
 }
+
+.finan{
+    width: 70%;
+    background: #80F0A6;
+    margin: 100px auto;
+    height: 800px;
+    border-radius: 50px;
+}
