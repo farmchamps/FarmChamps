@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogIn</title>
+    <title>{% block title %} {%endblock%}</title>
     <link rel="stylesheet" href="../static/styles/header.css">
     <link rel="stylesheet" href="../static/styles/main.css">
     <link rel="stylesheet" href="../static/styles/login.css">
     <link rel="stylesheet" href="../static/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 </head>
-<body> 
+
+<body>
     <header>
         <div class="logo"><a href="/"><img src="../static/images/logo.jpg" id="logo" alt=""></a></div>
     </header>
-        <div class="header">
-            <nav>
-                <ul>
-                    <li><a href="/"> Home</a></li>
-                    <li><a href="/weather"> Weather</a></li>
-                    <li><a href="/financial"> Financial</a></li>
-                    <li><a href="/blog"> Blog</a></li>
-                    <li><a href="/support"> Helping hand</a></li>
-                    <li><a href="/about"> About us</a></li>
-                </ul>
-            </nav>
-        </div>
+    <div class="header">
+        <nav>
+            <ul>
+                <li><a href="/"> Home</a></li>
+                <li><a href="/weather"> Weather</a></li>
+                <li><a href="/financial"> Financial</a></li>
+                <li><a href="/blog"> Blog</a></li>
+                <li><a href="/support">Contact Us</a></li>
+                <li><a href="/about"> About us</a></li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <div id="google_translate_element"></div>
 
-    <script type="text/javascript">
-    function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-    </script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+            }
+        </script>
 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    {% with messages = get_flashed_messages(with_categories=true)%}
-    {% if messages %}
-    {%for category,message in messages%}
-    <div class="flash_msg" id="flash_msg" onclick="flash_click()">
-        {{message}}
-    </div>
-    {%endfor%}
-    {%endif%}
-    {%endwith%}
-            {% block body %} {% endblock %}
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        {% with messages = get_flashed_messages(with_categories=true)%}
+        {% if messages %}
+        {%for category,message in messages%}
+        <div class="flash_msg" id="flash_msg" onclick="flash_click()">
+            {{message}}
+        </div>
+        {%endfor%}
+        {%endif%}
+        {%endwith%}
+        {% block body %} {% endblock %}
     </main>
     <div class="contact-details">
         <div class="info">
@@ -60,16 +63,17 @@
         </div>
     </div>
     <script>
-        function flash_click(){
-    flash = document.getElementById('flash_msg')
-    flash.style.display = 'none'
-}
+        function flash_click() {
+            flash = document.getElementById('flash_msg')
+            flash.style.display = 'none'
+        }
     </script>
-    <footer>
-        <div class="rights">
+    <footer>br>
+        <div c6ass="rights">6
             <h4>&copy; Copyright 2022. All rights reserved</h4>
-            <h4>FARMCHAMPS.com</h4>
+            < <h4>FARMCHAMPS.com</h4>
         </div>
     </footer>
 </body>
+
 </html>

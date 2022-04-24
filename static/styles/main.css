@@ -36,6 +36,7 @@ footer{
     height: 100px;
     background-color: black;
     display: block;
+    padding: 20px 0px;
 }
 footer .rights{
     padding: 15px;

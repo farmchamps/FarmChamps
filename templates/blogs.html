@@ -1,4 +1,5 @@
 {% extends "layout.html"%}
+{%block title%}Blogs{%endblock%}
 {% block body %}
 <link rel="stylesheet" href="../static/styles/blogs.css">
 <img src="../static/images/blogs_clip.jpg" id="blogs_clip" alt="">
@@ -7,9 +8,9 @@
     {% for i in ros%}
     <div class="one_blog">
     {% if i%2 == 0 %}
-    <img src="../static/images/blog{{i+1}}.jpg" alt="" class="thumbnail_left">
+    <img src="../static/images/blog1.jpg" alt="" class="thumbnail_left">
     {%else%}
-    <img src="../static/images/blog1{{i+1}}.jpg" alt="" class="thumbnail_right">
+    <img src="../static/images/blog1.jpg" alt="" class="thumbnail_right">
     {%endif%}
     {% if i%2 == 0 %}
     <div class="blog_summary sum_right">
@@ -18,7 +19,7 @@
     {%endif%}
         <h2>heading</h2>
             <div class="summ">
-                asfasf as f aesf a fer we rawer we rasd f zxfsghgfhj gh r fse fds g sdg d 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolores. Nobis labore reprehenderit a necessitatibus neque eius quo perferendis exercitationem, harum ducimus, corporis praesentium error provident cumque ipsam voluptate ratione?
             </div>
         </div>
     </div>
